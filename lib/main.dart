@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:flutter/rendering.dart';
 import 'package:whatsapp_screen/whatsapp_screen.dart';
 
 void main() {
@@ -10,6 +11,7 @@ class MyApp extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
+    debugPaintSizeEnabled = true;
     return MaterialApp(
       debugShowCheckedModeBanner: false,
       title: 'Flutter Demo',

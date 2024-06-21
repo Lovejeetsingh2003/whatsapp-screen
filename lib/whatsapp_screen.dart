@@ -9,7 +9,7 @@ class WhatsappScreen extends StatefulWidget {
 
 class _WhatsappScreenState extends State<WhatsappScreen> {
   var s = "start";
-  var a = 0;
+  var a = 2;
   var c = Colors.pink;
   var d = Colors.teal.shade900;
   var bg = Colors.white;
@@ -39,14 +39,16 @@ class _WhatsappScreenState extends State<WhatsappScreen> {
       ),
       body: ListView.builder(
         scrollDirection: Axis.vertical,
-        shrinkWrap: false,
+        shrinkWrap: true,
         itemCount: a,
         itemBuilder: (context, index) {
           return Container(
-            color: d,
+            color: index % 2 == 0 ? d : c,
+            width: MediaQuery.of(context).size.width / 2,
             margin: const EdgeInsets.all(10),
             padding: const EdgeInsets.all(10),
             child: Row(
+              mainAxisSize: MainAxisSize.min,
               children: [
                 const CircleAvatar(
                   radius: 30,
@@ -55,6 +57,7 @@ class _WhatsappScreenState extends State<WhatsappScreen> {
                 Container(
                   margin: const EdgeInsets.fromLTRB(20, 0, 20, 0),
                   child: const Column(
+                    mainAxisSize: MainAxisSize.min,
                     crossAxisAlignment: CrossAxisAlignment.start,
                     children: [
                       Text(
@@ -68,7 +71,7 @@ class _WhatsappScreenState extends State<WhatsappScreen> {
                       Text(
                         "Message",
                         style: TextStyle(
-                          fontSize: 28,
+                          fontSize: 15,
                           fontWeight: FontWeight.w500,
                           color: Colors.white,
                         ),
@@ -79,7 +82,7 @@ class _WhatsappScreenState extends State<WhatsappScreen> {
                 const Text(
                   "Date",
                   style: TextStyle(
-                    fontSize: 20,
+                    fontSize: 12,
                     fontWeight: FontWeight.w500,
                     color: Colors.white,
                   ),
