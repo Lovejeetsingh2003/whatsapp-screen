@@ -11,7 +11,7 @@ class MyApp extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-    debugPaintSizeEnabled = true;
+    // debugPaintSizeEnabled = true;
     return MaterialApp(
       debugShowCheckedModeBanner: false,
       title: 'Flutter Demo',
